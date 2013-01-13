@@ -1,6 +1,4 @@
----
-title: CS 140 Homework 1
----
+# CS 140 Homework 1
 
 ## 1. Larger matrices
 
