@@ -113,10 +113,11 @@ body {
   width: 500px;
   background: #F2F2F2;
   padding: 2em;
+  text-align: justify;
 }
 
 #chart-0, #chart-1, #chart-2, #chart-3, #chart-4 {
-  margin-left: -200px;
+  margin-left: -100px;
   border-top: 3px solid #E0E0E0;
   border-bottom: 3px solid #E0E0E0;
 }
