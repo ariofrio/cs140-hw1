@@ -103,11 +103,22 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+html {
+  background: white;
+}
+
 body {
 	font: 14px/1.3 Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  margin-top: 2em;
-  width: 900px;
+  width: 500px;
+  background: #F2F2F2;
+  padding: 2em;
+}
+
+#chart-0, #chart-1, #chart-2, #chart-3, #chart-4 {
+  margin-left: -200px;
+  border-top: 3px solid #E0E0E0;
+  border-bottom: 3px solid #E0E0E0;
 }
 
 .small, small {
