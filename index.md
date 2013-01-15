@@ -16,6 +16,8 @@ A version of this document with interactive graphs is available at <http://andre
 
 ## Part 1: Increasing matrix size
 
+We can see here that the algorithm is not exactly *O(n<sup>3</sup>)* as advertised. It's a bit faster for matrices of sizes between 8 and 512 (as pictured). Alternatively, it's slower for 2x2 matrices and matrices larger than 512x512.
+
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
 {
   "dataSourceUrl": "//docs.google.com/spreadsheet/tq?range=A1%3AC12&key=0Aktsct0Ua9XhdHRHcXZrRldURm91azhnbUNVM2NTanc&gid=0&headers=-1",
@@ -34,7 +36,7 @@ A version of this document with interactive graphs is available at <http://andre
 }
 </script>
 
-We can see here that the algorithm is not exactly *O(n<sup>3</sup>)* as advertised. It's a bit faster for matrices of sizes between 8 and 512 (as pictured). Alternatively, it's slower for 2x2 matrices and matrices larger than 512x512.
+The performance vs. matrix size plot is not a horizontal line, as expected, showing again that the algorithm is not exactly *O(n<sup>3</sup>)*. I can hypothesise that, for smaller matrices, memory can be cached very well, and that's why larger matrices have worse performance. However, I'm not sure why very small matrices have worse performance. Perhaps it's a problem with my benchmarking code, but I haven't looked into it.
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
 {
@@ -56,9 +58,9 @@ We can see here that the algorithm is not exactly *O(n<sup>3</sup>)* as advertis
 }
 </script>
 
-The performance vs. matrix size plot is not a horizontal line, as expected, showing again that the algorithm is not exactly *O(n<sup>3</sup>)*. I can hypothesise that, for smaller matrices, memory can be cached very well, and that's why larger matrices have worse performance. However, I'm not sure why very small matrices have worse performance. Perhaps it's a problem with my benchmarking code, but I haven't looked into it.
-
 ## Part 2: Nesting permutatations
+
+In the chart above we see that the complexity of the algorithm remains very close to *O(n<sup>3</sup>)* for any nesting permutation. Still, the permutations `kij` and `jik` show a larger average logarithmic slope than the rest, becoming specially apparent in the larger matrix sizes. For a 2048x2048 matrix, the `jki` permutation is 20 times faster than the `kij` permutation.
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
 {
@@ -77,11 +79,7 @@ The performance vs. matrix size plot is not a horizontal line, as expected, show
 }
 </script>
 
-In the chart above we see that the complexity of the algorithm remains very
-close to *O(n<sup>3</sup>)* for any nesting permutation. Still, the
-permutations `kij` and `jik` show a larger average logarithmic slope than the
-rest, becoming specially apparent in the larger matrix sizes. For a 2048x2048
-matrix, the `jki` permutation is 20 times faster than the `kij` permutation.
+This chart lets us see the difference between nesting permutations more clearly. We can see that, while `jki` is fastest for large matrices, its a bit slower for small matrices.
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
 {
@@ -99,8 +97,6 @@ matrix, the `jki` permutation is 20 times faster than the `kij` permutation.
   }
 }
 </script>
-
-This chart lets us see the difference between nesting permutations more clearly. We can see that, while `jki` is fastest for large matrices, its a bit slower for small matrices.
 
 ### Why is `jki` faster?
 
