@@ -5,6 +5,8 @@ title: CS 140 Homework 1
 
 All data is available in Google Docs at <http://j.mp/matrixdata>.
 
+A version of this document with interactive graphs is available at <http://andresriofrio.com/cs140-hw1/>.
+
 ## Modifications to the code
 
  1. Extend option parsing and testing code to run a configurable number of
