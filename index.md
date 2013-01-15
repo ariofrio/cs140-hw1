@@ -3,9 +3,14 @@ layout: article
 title: CS 140 Homework 1
 ---
 
+All data is available in Google Docs at <http://j.mp/matrixdata>.
+
 ## Modifications to the code
 
-All data is available in Google Docs at <http://j.mp/matrixdata>.
+ 1. Extend option parsing and testing code to run a configurable number of
+    iterations.
+ 2. Print the time elapsed in microseconds instead of seconds.
+ 3. Temporarily modified `matrix_multiply_run_1()` to test different nesting permutations.
 
 ## Part 1: Increasing matrix size
 
